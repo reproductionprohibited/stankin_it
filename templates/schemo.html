@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css') }}">
+  <title>MQTT</title>
+</head>
+<body data-bs-theme="dark">
+  <header class="d-flex flex-wrap justify-content-center py-3 navbar-dark bg-body-tertiary">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="{{ url_for('programs') }}" class="text-info nav-link">
+          Станок. Программы
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('details') }}" class="text-info nav-link">
+          Станок. Детали
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('schemo') }}" class="text-info nav-link">
+          Наш Датчик
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('mqtt') }}" class="text-info nav-link">
+          Реальный MQTT
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <div class="container px-4 py-5 text-center" id="featured-3">
+    <h1 class="pb-2 border-bottom">Датчик ( наш ). MQTT</h1>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Статус датчика</h3>
+        <p>{{status}}</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Показания датчика температуры</h3>
+        <p>{{temperature}}°C</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Показания датчика влажности</h3>
+        <p>{{humidity}}%</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css') }}">
+  <title>Детали</title>
+</head>
+<body data-bs-theme="dark" class="text-center">
+  
+  <header class="d-flex flex-wrap justify-content-center py-3 navbar-dark bg-body-tertiary">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="{{ url_for('programs') }}" class="text-info nav-link">
+          Станок. Программы
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('details') }}" class="text-info nav-link">
+          Станок. Детали
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('schemo') }}" class="text-info nav-link">
+          Наш Датчик
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('mqtt') }}" class="text-info nav-link">
+          Реальный MQTT
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <div class="container px-4 py-5 text-center" id="featured-3">
+    <h1 class="pb-2 border-bottom">Станок Детали. Канал 1</h1>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Общее время работы канала</h3>
+        <p>{{all_time}}</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Текущее время работы канала</h3>
+        <p>{{current_time}}</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Статус канала</h3>
+        <p>{{status}}</p>
+      </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Режим канала</h3>
+        <p>{{mode}}</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Название программы</h3>
+        <p>{{program_name}}</p>
+      </div>
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Время выполнения программы</h3>
+        <p>{{program_time}}</p>
+      </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-1">
+      <div class="feature col">
+        <h3 class="fs-2 text-body-emphasis">Процент выполнения программы</h3>
+        <p>{{percentage}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
